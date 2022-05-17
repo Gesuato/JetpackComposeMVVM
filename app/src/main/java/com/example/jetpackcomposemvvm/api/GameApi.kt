@@ -5,9 +5,6 @@ import com.example.jetpackcomposemvvm.repository.model.GameApiResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-/**
- * Created by Ruben Quadros on 01/08/21
- **/
 interface GameApi {
 
     @GET(GAME_BASE)
