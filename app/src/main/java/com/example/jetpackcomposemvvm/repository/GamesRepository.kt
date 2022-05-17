@@ -6,7 +6,9 @@ import com.example.jetpackcomposemvvm.paging.Paging
 import com.example.jetpackcomposemvvm.repository.model.toEntity
 import com.example.jetpackcomposemvvm.usecase.model.Game
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class GamesRepository @Inject constructor(private val gameApi: GameApi) {
 
     suspend fun getPaginatedGames(page: Int, pageSize: Int): Paging<String, Game>? {
