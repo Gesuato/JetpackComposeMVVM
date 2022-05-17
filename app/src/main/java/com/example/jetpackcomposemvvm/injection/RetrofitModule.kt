@@ -3,6 +3,7 @@ package com.example.jetpackcomposemvvm.injection
 import android.content.Context
 import com.example.jetpackcomposemvvm.BuildConfig
 import com.example.jetpackcomposemvvm.api.ApiConstants
+import com.example.jetpackcomposemvvm.api.GameApi
 import com.example.jetpackcomposemvvm.retrofit.RetrofitInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -15,7 +16,9 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.io.File
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -58,4 +61,8 @@ object RetrofitModule {
             .client(okHttpClient)
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideGameApi(retrofit: Retrofit): GameApi = retrofit.create()
 }
