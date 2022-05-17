@@ -20,32 +20,34 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
-import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.LazyPagingItems
 import coil.compose.rememberImagePainter
 import com.example.jetpackcomposemvvm.presentation.composables.commonui.LoadingSpinner
-import com.example.jetpackcomposemvvm.presentation.composables.home.HomeViewModel
 import com.example.jetpackcomposemvvm.usecase.model.Game
 
 @ExperimentalFoundationApi
 @Composable
-fun HomeScreen(homeViewModel: HomeViewModel = hiltViewModel()) {
-    GameList(homeViewModel)
+fun HomeScreen(
+    lazyPagingItems: LazyPagingItems<Game>,
+    openGameDetails: (Int) -> Unit
+) {
+    GameList(lazyPagingItems, openGameDetails)
 }
 
 @ExperimentalFoundationApi
 @Composable
-fun GameList(homeViewModel: HomeViewModel) {
+fun GameList(lazyPagingItems: LazyPagingItems<Game>, openGameDetails: (Int) -> Unit) {
     val listState = rememberLazyListState()
-    val lazyPagingItems = homeViewModel.getPaginatedGames().flow.collectAsLazyPagingItems()
+
     LazyVerticalGrid(
+        modifier = Modifier.padding(start = 10.dp, end = 10.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
         state = listState, cells = GridCells.Fixed(count = 2), content = {
             items(lazyPagingItems.itemCount) { index ->
                 lazyPagingItems[index]?.let {
-                    GameItem(game = it)
+                    GameItem(it, openGameDetails)
                 }
             }
             lazyPagingItems.apply {
@@ -64,7 +66,7 @@ fun GameList(homeViewModel: HomeViewModel) {
 }
 
 @Composable
-fun GameItem(game: Game) {
+fun GameItem(game: Game, openGameDetails: (Int) -> Unit) {
     Card(
         elevation = 20.dp,
         backgroundColor = Color.Black,
@@ -72,7 +74,7 @@ fun GameItem(game: Game) {
             .clip(RoundedCornerShape(5.dp))
             .height(250.dp)
             .fillMaxWidth()
-            .clickable {}) {
+            .clickable { openGameDetails(game.id) }) {
 
         Column {
             Image(

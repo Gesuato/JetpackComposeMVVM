@@ -1,5 +1,6 @@
 package com.example.jetpackcomposemvvm.retrofit
 
+import com.example.jetpackcomposemvvm.BuildConfig
 import com.example.jetpackcomposemvvm.api.ApiConstants
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -11,7 +12,7 @@ class RetrofitInterceptor : Interceptor {
             val requestBuilder = chain.request().newBuilder()
             val originalUrl = chain.request().url
             val updatedUrl = originalUrl.newBuilder()
-                .addQueryParameter("key", ApiConstants.API_KEY)
+                .addQueryParameter(ApiConstants.API_KEY, BuildConfig.API_KEY)
                 .build()
             requestBuilder.url(updatedUrl)
             return chain.proceed(requestBuilder.build())
