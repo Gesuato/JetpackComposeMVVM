@@ -1,6 +1,6 @@
-package com.example.jetpackcomposemvvm.repository.model
+package com.example.jetpackcomposemvvm.remote.model
 
-import com.example.jetpackcomposemvvm.usecase.model.Game
+import com.example.jetpackcomposemvvm.domain.entity.Game
 import com.google.gson.annotations.SerializedName
 
 data class GameApiResult(

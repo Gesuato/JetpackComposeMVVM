@@ -1,7 +1,7 @@
-package com.example.jetpackcomposemvvm.api
+package com.example.jetpackcomposemvvm.remote.api
 
 import com.example.jetpackcomposemvvm.paging.PagingResult
-import com.example.jetpackcomposemvvm.repository.model.GameApiResult
+import com.example.jetpackcomposemvvm.remote.model.GameApiResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 

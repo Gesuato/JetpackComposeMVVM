@@ -1,7 +1,7 @@
 package com.example.jetpackcomposemvvm.presentation.composables.home
 
 import com.example.jetpackcomposemvvm.paging.source.GamesSource
-import com.example.jetpackcomposemvvm.repository.GamesRepository
+import com.example.jetpackcomposemvvm.domain.repository.GamesRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

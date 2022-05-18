@@ -1,4 +1,4 @@
-package com.example.jetpackcomposemvvm.api
+package com.example.jetpackcomposemvvm.remote.api
 
 object ApiConstants {
     const val API_KEY = "key"

@@ -24,7 +24,7 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import coil.compose.rememberImagePainter
 import com.example.jetpackcomposemvvm.presentation.composables.commonui.LoadingSpinner
-import com.example.jetpackcomposemvvm.usecase.model.Game
+import com.example.jetpackcomposemvvm.domain.entity.Game
 
 @ExperimentalFoundationApi
 @Composable

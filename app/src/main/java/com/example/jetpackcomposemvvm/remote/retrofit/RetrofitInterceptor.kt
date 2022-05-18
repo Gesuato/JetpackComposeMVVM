@@ -1,7 +1,7 @@
-package com.example.jetpackcomposemvvm.retrofit
+package com.example.jetpackcomposemvvm.remote.retrofit
 
 import com.example.jetpackcomposemvvm.BuildConfig
-import com.example.jetpackcomposemvvm.api.ApiConstants
+import com.example.jetpackcomposemvvm.remote.api.ApiConstants
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException

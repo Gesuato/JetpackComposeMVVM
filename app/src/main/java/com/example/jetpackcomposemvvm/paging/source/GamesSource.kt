@@ -2,8 +2,8 @@ package com.example.jetpackcomposemvvm.paging.source
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.jetpackcomposemvvm.repository.GamesRepository
-import com.example.jetpackcomposemvvm.usecase.model.Game
+import com.example.jetpackcomposemvvm.domain.repository.GamesRepository
+import com.example.jetpackcomposemvvm.domain.entity.Game
 import javax.inject.Inject
 
 class GamesSource @Inject constructor(

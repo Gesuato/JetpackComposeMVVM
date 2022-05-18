@@ -2,9 +2,9 @@ package com.example.jetpackcomposemvvm.injection
 
 import android.content.Context
 import com.example.jetpackcomposemvvm.BuildConfig
-import com.example.jetpackcomposemvvm.api.ApiConstants
-import com.example.jetpackcomposemvvm.api.GameApi
-import com.example.jetpackcomposemvvm.retrofit.RetrofitInterceptor
+import com.example.jetpackcomposemvvm.remote.api.ApiConstants
+import com.example.jetpackcomposemvvm.remote.api.GameApi
+import com.example.jetpackcomposemvvm.remote.retrofit.RetrofitInterceptor
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

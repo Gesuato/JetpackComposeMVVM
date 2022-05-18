@@ -1,10 +1,10 @@
-package com.example.jetpackcomposemvvm.repository
+package com.example.jetpackcomposemvvm.domain.repository
 
 import android.os.RemoteException
-import com.example.jetpackcomposemvvm.api.GameApi
+import com.example.jetpackcomposemvvm.remote.api.GameApi
 import com.example.jetpackcomposemvvm.paging.Paging
-import com.example.jetpackcomposemvvm.repository.model.toEntity
-import com.example.jetpackcomposemvvm.usecase.model.Game
+import com.example.jetpackcomposemvvm.domain.entity.Game
+import com.example.jetpackcomposemvvm.remote.model.toEntity
 import javax.inject.Inject
 import javax.inject.Singleton
 
